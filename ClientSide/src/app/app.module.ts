@@ -84,6 +84,10 @@ import { NavComponent } from './page-section/nav/nav.component';
 import { LeftbarComponent } from './page-section/leftbar/leftbar.component'; 
 import { ControlsModule } from './controls/controls.module';
 import { SettingsModule } from './settings/settings.module';
+import {StautService} from './settings/staut.service';
+
+
+
 
 //import { Grid } from 'ag-grid-community';
 // import {MatChipsModule} from '@angular/material/chips';
@@ -123,6 +127,8 @@ import { SettingsModule } from './settings/settings.module';
     DemoComponent,
     NavComponent,
     LeftbarComponent,
+ 
+   
     ],
   imports: [
     BrowserModule,
@@ -154,13 +160,12 @@ import { SettingsModule } from './settings/settings.module';
     MatProgressSpinnerModule,
     MatSnackBarModule,
     PurchaseModule,
-<<<<<<< HEAD
+
     SettingsModule,
-    ControlsModule
-=======
+    ControlsModule,
     ControlsModule,
     MatChipsModule
->>>>>>> fdb65a852de5e2bdff5898b0f3c6883e9e6f48fd
+
     //Grid
 
   ],
@@ -179,7 +184,8 @@ import { SettingsModule } from './settings/settings.module';
     StockModule,
     SalesModule,
     ApptestModule,
-    DemoService
+    DemoService,
+    StautService
   ],
   bootstrap: [AppComponent]
 })

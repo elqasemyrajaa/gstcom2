@@ -29,7 +29,9 @@ const routes: Routes = [
   { path: 'sales', loadChildren: () => import('./sales/sales.module').then(m => m.SalesModule) },
   { path: 'apptest', loadChildren: () => import('./apptest/apptest.module').then(m => m.ApptestModule) },
   { path: 'purchase', loadChildren: () => import('./purchase/purchase.module').then(m => m.PurchaseModule) },
-  { path: 'settings', loadChildren: () => import('./settings/settings.module').then(m => m.SettingsModule) }
+  { path: 'settings', loadChildren: () => import('./settings/settings.module').then(m => m.SettingsModule) },
+  { path: 'settings/statut', component: StatutComponent, pathMatch:'full' }
+  // { path: 'trip', component: TripComponent },
 
   // { path: '', component: HomeComponent },
   // { path: 'employee', component: EmployeesComponent },
@@ -44,8 +46,7 @@ const routes: Routes = [
   // { path: 'chart', component: ChartComponent },
   // { path: 'maps', component: MapsComponent },
   // { path: 'upload', component: UploadfilesComponent },
-  // { path: 'statut', component: StatutComponent },
-  // { path: 'trip', component: TripComponent },
+ 
   // { path: 'delivery', component: DeliveryComponent },
   // { path: 'route', component: VatComponent },
   // { path: 'test', component: TestComponent },

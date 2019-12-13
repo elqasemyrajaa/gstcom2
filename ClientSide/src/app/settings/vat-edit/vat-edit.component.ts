@@ -38,7 +38,6 @@ export class VatEditComponent implements OnInit {
       this.objemp = regForm.value;
       console.log('this.objemp',this.objemp)
       this.dataservice.EditVat(this.objemp).subscribe(res => {
-         
         this.nameEvent.emit("ccc");
         this.cb.nativeElement.click(); 
         
