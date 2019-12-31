@@ -38,6 +38,7 @@ import { SignalRService } from './DataService/signal-r.service';
 import { MapsComponent } from './apptest/maps/maps.component';
 import { UploadfilesComponent } from './apptest/uploadfiles/uploadfiles.component';
 import { StatutComponent } from './settings/statut/statut.component';
+import { StatutEditComponent } from './settings/statut-edit/statut-edit.component';
 import { TripComponent } from './apptest/trip/trip.component';
 import { StockModule } from './stock/stock.module';
 import { DeliveryComponent } from './sales/delivery/delivery.component';
@@ -50,7 +51,6 @@ import { SalesModule } from './sales/sales.module';
 import { NavBarComponent } from './page-section/nav-bar/nav-bar.component';
 import { TestComponent } from './apptest/test/test.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import {MatChipsModule,
   MatButtonModule,
   MatCardModule,
@@ -85,6 +85,8 @@ import { LeftbarComponent } from './page-section/leftbar/leftbar.component';
 import { ControlsModule } from './controls/controls.module';
 import { SettingsModule } from './settings/settings.module';
 import {StautService} from './settings/staut.service';
+import { from } from 'rxjs';
+
 
 
 
@@ -126,7 +128,7 @@ import {StautService} from './settings/staut.service';
     InvoiceComponent,
     DemoComponent,
     NavComponent,
-    LeftbarComponent,
+    LeftbarComponent
  
    
     ],
@@ -160,7 +162,6 @@ import {StautService} from './settings/staut.service';
     MatProgressSpinnerModule,
     MatSnackBarModule,
     PurchaseModule,
-
     SettingsModule,
     ControlsModule,
     ControlsModule,

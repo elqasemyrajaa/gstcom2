@@ -8,7 +8,6 @@ import { Vat } from 'src/Models/Vat';
   templateUrl: './vat-edit.component.html',
   styleUrls: ['./vat-edit.component.sass']
 })
-
 export class VatEditComponent implements OnInit {
 
   constructor(private dataservice: VatService, private route: Router) {
@@ -34,7 +33,6 @@ export class VatEditComponent implements OnInit {
   EditMainObject(regForm: NgForm) {
     
     if(!this.IsNew){      
-
       this.objemp = regForm.value;
       console.log('this.objemp',this.objemp)
       this.dataservice.EditVat(this.objemp).subscribe(res => {

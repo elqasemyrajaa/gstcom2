@@ -125,12 +125,10 @@ export class VatComponent implements OnInit {
     edit(){
 
       if(this.IsRowSelected ){                
-
         this.SelectedClient = this.api.getSelectedRows()[0];
         console.log("selected client", this.SelectedClient);
         this.editcomponent.IsNew = false;
         this.editcomponent.objemp = this.SelectedClient;                
-        
         console.log("is new :" + this.editcomponent.IsNew);
         console.log("objemp value :" , this.editcomponent.objemp);
       }

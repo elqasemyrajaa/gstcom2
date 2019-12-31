@@ -14,8 +14,6 @@
         </div> -->
     </div>
 </div>
-
-
 <app-customers-edit></app-customers-edit>
 
 <div >
@@ -51,8 +49,8 @@
                     <br>
                     <!------------------- AG GRID COMPONENT ------------- -->
                     <ag-grid-angular style="width: 100%; height: 800px;" class="ag-theme-balham" (gridReady)="onGridReady($event)" 
-                                (cellValueChanged)="onCellValueChanged($event)" [columnDefs]="columnDefs" [rowData]="rowData" 
-                                [rowSelection]="rowSelection" [paginationAutoPageSize]="true"
+                                 [columnDefs]="columnDefs" [rowData]="rowData" 
+                                [rowSelection]="rowSelection" (cellValueChanged)="onCellValueChanged($event)" [paginationAutoPageSize]="true"
                         (selectionChanged)="onSelectionChanged($event)" [pagination]="true">
                     </ag-grid-angular>
 

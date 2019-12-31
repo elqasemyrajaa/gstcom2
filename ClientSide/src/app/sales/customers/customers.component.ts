@@ -84,9 +84,6 @@ export class CustomersComponent implements OnInit {
     this.columnDefs = this.createColumnDefs();
     this.rowSelection = "multiple";
   }
-
-  
-
   onGridReady(params): void {
     this.api = params.api;
     this.columnApi = params.columnApi;
@@ -125,7 +122,6 @@ export class CustomersComponent implements OnInit {
       this.IsMultiple = false;
     }
     console.log(event);
-
   }
   //oussama
   @ViewChild( CustomersEditComponent, { static:false, }) customerEdit:CustomersEditComponent;
@@ -135,7 +131,6 @@ export class CustomersComponent implements OnInit {
     console.log("editiiiiiiing");
     this.SelectedClient = this.api.getSelectedRows()[0];
     this.mode = 1;
-    
     this.firstFormGroup.controls['id'].setValue(this.SelectedClient.id);
     this.firstFormGroup.controls['code'].setValue(this.SelectedClient.code);
     this.firstFormGroup.controls['name1'].setValue(this.SelectedClient.name1);
@@ -458,13 +453,9 @@ export class CustomersComponent implements OnInit {
     '</div>'
 })
 export class DialogOverviewExampleDialog {
-
   constructor(
     public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
     @Inject(MAT_DIALOG_DATA) public data: Customer[]) {
     console.log(this.data);
   }
-
-
-
 }

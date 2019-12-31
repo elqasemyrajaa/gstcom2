@@ -22,6 +22,7 @@ import { TestComponent } from './apptest/test/test.component';
 import { ClientsComponent } from './apptest/clients/clients.component';
 import { InvoiceComponent } from './apptest/invoice/invoice.component';
 import { DemoComponent } from './apptest/demo/demo.component';
+import { StatutEditComponent } from './settings/statut-edit/statut-edit.component';
 
 const routes: Routes = [
 
@@ -30,9 +31,9 @@ const routes: Routes = [
   { path: 'apptest', loadChildren: () => import('./apptest/apptest.module').then(m => m.ApptestModule) },
   { path: 'purchase', loadChildren: () => import('./purchase/purchase.module').then(m => m.PurchaseModule) },
   { path: 'settings', loadChildren: () => import('./settings/settings.module').then(m => m.SettingsModule) },
-  { path: 'settings/statut', component: StatutComponent, pathMatch:'full' }
+  { path: 'settings/statut', component: StatutComponent, pathMatch:'full' },
+  { path: 'settings/vat', component: VatComponent, pathMatch:'full' },
   // { path: 'trip', component: TripComponent },
-
   // { path: '', component: HomeComponent },
   // { path: 'employee', component: EmployeesComponent },
   // { path: 'clients', component: ClientsComponent },
