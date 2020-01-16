@@ -18,17 +18,17 @@ constructor(private dataservce:StautService,private http: HttpClient){
 }
 @Output() nameEvent = new EventEmitter<string>();
 @ViewChild('closeBtn', { static: false, }) cb: ElementRef;
-@ViewChild('editstatut', { static: false, }) editcomponent:StatutEditComponent   
+@ViewChild('editstatut', { static: false, }) editcomponent:StatutEditComponent
 
   ngOnInit() {
     this.LoadData();
   }
   /**********************edit (when you click the information will transform to other component)******************************** */
   edit(){
-    if(this.IsRowSelected){                
+    if(this.IsRowSelected){
       this.SelectedClient = this.api.getSelectedRows()[0];
       this.editcomponent.IsNew = false;
-      this.editcomponent.objemp=this.SelectedClient;              
+      this.editcomponent.objemp=this.SelectedClient;
     }
 
   }
@@ -50,13 +50,13 @@ constructor(private dataservce:StautService,private http: HttpClient){
   }
   /*********************Variable ag-grid***************************** */
   private api: GridApi;
-  private columnApi: ColumnApi; 
+  private columnApi: ColumnApi;
   private rowSelection;
   private SelectedClient:Statut;
   IsRowSelected: boolean = false;
   IsMultiple: boolean = false;
   IsNew: boolean;
-  private sortingOrder;  
+  private sortingOrder;
   /******************Fill ag grid ******************************** */
   onGridReady(params): void {
     this.api = params.api;
@@ -76,7 +76,6 @@ constructor(private dataservce:StautService,private http: HttpClient){
       headerName:"Libelle",
       field:"libelle",
       sortingOrder:["asc","desc"],
-
       width:500
     },
     {
@@ -109,16 +108,16 @@ constructor(private dataservce:StautService,private http: HttpClient){
         }
       }
       )
-        , err => {
+      , err => {
           console.log(err);
         }
   }
 
   /**********************Add()***************************** */
   AddStatut(regForm: NgForm) {
-      this.objtempemp=new Statut();      
+      this.objtempemp=new Statut();
       this.objtempemp.libelle=regForm.value.libelle;
-      this.objtempemp.remarque=regForm.value.remarque;    
+      this.objtempemp.remarque=regForm.value.remarque;
       this.dataservce.AddStatut(this.objtempemp).subscribe(res=>{
         alert("Statut Added successfully");
       })
@@ -129,6 +128,6 @@ constructor(private dataservce:StautService,private http: HttpClient){
       alert('suppression bien fait');
     })
   }
-  
+
 }
 

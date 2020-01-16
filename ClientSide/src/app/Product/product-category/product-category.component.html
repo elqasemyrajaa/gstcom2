@@ -1,0 +1,66 @@
+<!----------------------------ag grid------------------------------------->
+<div class="container" >
+    <div class="panel panel-default"> 
+        <!--Panel d'affichage -->
+        <div class="panel panel-default"> 
+            <div class="panel-body"> 
+                       <div class="row"></div>
+                         <div class="col-md-7" style="text-align: right;float:right"><br>
+                           <button (click)="edit()" mat-raised-button style="float:right;background-color: #4CAF50;color: white;margin-left: 5px;margin-right:50px" [disabled]="IsMultiple" *ngIf="IsRowSelected"    data-toggle="modal" data-target="#myModal"   >
+                              <i class="fas fa-user-edit"></i> Edit
+                        </button>
+                        <button mat-raised-button color="warn" data-toggle="modal" data-target="#myModal2"   [disabled]="IsMultiple" *ngIf="IsRowSelected"  style="margin-left: 5px;margin-right:10px" >
+                              <i class="far fa-trash-alt"></i> Delete
+                        </button>
+                            <button  mat-flat-button data-toggle="modal" data-target="#myModal"  style="background-color:#448AFF;color: white;margin-right: 10px;"><i
+                               class="fas fa-user-plus"></i> Add
+                       </button> 
+                         </div>
+                       </div>
+                <!------------------- AG GRID COMPONENT ------------- -->
+                      <ag-grid-angular style="width: 1000px;margin-left:70px; height: 450px;" class="ag-theme-balham" 
+                                   [enableSorting]="true" [enableFilter]="true"  [columnDefs]="columnDefs" [rowData]="list" (gridReady)="onGridReady($event)" 
+                                  [paginationAutoPageSize]="true" [animateRows]="true" [pagination]="true" (selectionChanged)="onSelectionChanged($event)" >
+                      </ag-grid-angular>
+                      
+                   </div>
+              </div>
+       </div>
+   <!------------------------------Modal (Add / Edit)------------------------------------>
+   <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+         <div class="modal-content">
+          <div class="modal-header">
+             <button type="button" class="close" data-dismiss="modal">&times;</button>
+             <h4 class="modal-primary">Product Category</h4>
+          </div>
+            <div class="modal-body">
+               <app-product-category-edit #editproduct></app-product-category-edit>
+            </div>
+            <div class="modal-footer">
+               <button mat-raised-button color="warn" type="button" #closeBtn  data-dismiss="modal">Close</button>
+             </div>
+         </div>
+   </div>
+</div>
+ <!------------------------------------Delete()--------------------------------------------->
+ <div id="myModal2" class="modal fade " role="dialog">
+   <div class="modal-dialog modal-sm">
+        <div *ngFor="let item of StObjet" class="modal-content">
+           <div  class="modal-body">
+            <img style="width:100px;margin-left: 80px;" src="assets/images/exclamation-512.png"/><br><br>
+            <p style="font-weight: bold;color:black;font-size: 13px;margin-left:34px;">Are you sure , you want delete </p>
+            <p style="font-weight: normal;font-size: 14px;margin-left: 120px;">N° : {{item.id}}</p>
+           </div>
+           <div class="modal-footer">
+            <button style="margin-right:10px;" mat-raised-button type="button" #closeBtn  data-dismiss="modal">Close </button>
+            <button mat-raised-button color="warn" (click)="deleteProduct(item.id)"  type="button" >Delete</button>
+          </div>
+        </div>
+  </div>
+</div>
+
+  
+ 
+ 
+ 

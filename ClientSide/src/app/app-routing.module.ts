@@ -23,6 +23,8 @@ import { ClientsComponent } from './apptest/clients/clients.component';
 import { InvoiceComponent } from './apptest/invoice/invoice.component';
 import { DemoComponent } from './apptest/demo/demo.component';
 import { StatutEditComponent } from './settings/statut-edit/statut-edit.component';
+import { ProductCategoryComponent } from './Product/product-category/product-category.component';
+
 
 const routes: Routes = [
 
@@ -33,6 +35,9 @@ const routes: Routes = [
   { path: 'settings', loadChildren: () => import('./settings/settings.module').then(m => m.SettingsModule) },
   { path: 'settings/statut', component: StatutComponent, pathMatch:'full' },
   { path: 'settings/vat', component: VatComponent, pathMatch:'full' },
+  {path:'Product/product-category',component:ProductCategoryComponent,pathMatch:'full'}
+   
+
   // { path: 'trip', component: TripComponent },
   // { path: '', component: HomeComponent },
   // { path: 'employee', component: EmployeesComponent },

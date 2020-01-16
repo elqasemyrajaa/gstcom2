@@ -1,0 +1,28 @@
+<!----------------------------ag grid------------------------------------->
+<div class="container" >
+    <div class="panel panel-default"> 
+        <!--Panel d'affichage -->
+        <div class="panel panel-default"> 
+            <div class="panel-body"> 
+                       <div class="row"></div>
+                         <div class="col-md-7" style="text-align: right;float:right"><br>
+                            <button  mat-flat-button  style="background-color:#448AFF;color: white;margin-right: 35px;"><i
+                               class="fas fa-user-plus"></i> Add
+                       </button> 
+                         </div>
+                       </div>
+                <!------------------- AG GRID COMPONENT ------------- -->
+                      <ag-grid-angular style="width: 1000px;margin-left:70px; height: 450px;" class="ag-theme-balham" 
+                                   [enableSorting]="true" [enableFilter]="true"  [columnDefs]="columnDefs" [rowData]="paimentList" 
+                                  [paginationAutoPageSize]="true" [animateRows]="true" [pagination]="true" >
+                      </ag-grid-angular>
+                   </div>
+              </div>
+       </div>
+   
+ 
+
+  
+ 
+ 
+ 

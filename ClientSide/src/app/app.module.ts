@@ -86,6 +86,12 @@ import { ControlsModule } from './controls/controls.module';
 import { SettingsModule } from './settings/settings.module';
 import {StautService} from './settings/staut.service';
 import { from } from 'rxjs';
+import { ProductCategoryComponent } from './Product/product-category/product-category.component';
+import { ProductCategoryEditComponent } from './Product/product-category-edit/product-category-edit.component';
+
+
+
+
 
 
 
@@ -128,10 +134,11 @@ import { from } from 'rxjs';
     InvoiceComponent,
     DemoComponent,
     NavComponent,
-    LeftbarComponent
- 
-   
+    LeftbarComponent,
+    ProductCategoryComponent,
+    ProductCategoryEditComponent,
     ],
+    
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

@@ -1,0 +1,23 @@
+
+<!-----------------------Form---------------------------------------->
+<div class="container">
+    <form #EditForm='ngForm' name="editform" (ngSubmit)="EditMainObject(EditForm)" class="form-horizontal" style="width:40%">
+       <div class="form-group">
+          <input  type="hidden" [(ngModel)]='objemp.id'  id="id" placeholder="Id" name="id" id required >
+       </div>
+       <div class="form-group">
+          <input  type="text" class="form-control" [(ngModel)]='objemp.name' name="name" #name="ngModel"   id="name" placeholder="Name"  >
+       </div>  
+       <div class="form-group">
+          <input  required type="text" class="form-control" [(ngModel)]='objemp.remarque' #remarque="ngModel"  id="remarque" placeholder="remarque" name="remarque" remarque required >
+       </div>
+       <div class="form-group">
+          <button style="background-color:#448AFF;color: white;" type="submit" mat-raised-button >Save Product Category</button>
+       </div>
+   </form>
+ </div>
+                 
+              
+ 
+    
+ 
